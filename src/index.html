@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+
+</head>
+<body>
+<form>
+    Nhập từ cần tìm kiếm:
+    <input type="text" id="txt-search" name="txt-search">
+    <button type="button" onclick="search()">Tìm kiếm</button>
+    Kết quả: <label id="result"></label>
+</form>
+<script>
+    var ens = new Array('one', 'two', 'three', 'four', 'five');
+    var vns = new Array('mot', 'hai', 'ba', 'bon', 'nam');
+
+    function search() {
+        var txt_search = document.getElementById('txt-search');
+        var index = 0;
+        var status = false;
+        for (var i = 0; i < ens.length; i++) {
+            if (ens[i] === txt_search.value) {
+                index = i;
+                status = true;
+                break;
+            }
+        }
+
+        if (status) {
+            document.getElementById('result').innerHTML = vns[index];
+        }
+        else {
+            document.getElementById('result').innerHTML = 'không tìm thấy';
+        }
+    }
+</script>
+</body>
+</html>
